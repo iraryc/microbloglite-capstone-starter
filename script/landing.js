@@ -22,3 +22,15 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".custom-container");
+
+sign_up_btn.addEventListener('click', () => {
+    container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener('click', () => {
+    container.classList.remove("sign-up-mode");
+});
