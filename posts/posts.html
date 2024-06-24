@@ -14,15 +14,17 @@
         crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="/style/global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="/style/posts.css">
 
     <title>/POSTS</title>
 
+    <button onclick="logout()">Logout</button>
+
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
+    <script src="/script/auth.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
@@ -38,6 +40,6 @@
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script src="/script/posts.js"></script>
 </body>
 </html>
