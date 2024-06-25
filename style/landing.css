@@ -1,5 +1,20 @@
 /* Landing Page CSS */
 
+/* logo begings*/
+
+.navbar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand img {
+    max-height: 100px; /* Adjust as needed */
+    padding-top: 20px;
+}
+
+/* logo ends */
+
 /* log in begins */
 *{
     padding: 0;
@@ -336,6 +351,7 @@ form.sign-up-form{
 
     .left-panel{
         grid-row: 1 / 2;
+        
     }
 
     .rght-panel{
@@ -343,7 +359,8 @@ form.sign-up-form{
     }
 
     .right-panel .content, .right-panel .image{
-        transform: translateY(500px);
+        transform: translateY(600px);
+        padding-top: 360px;
     }
 
     .custom-container.sign-up-mode:before{
@@ -359,13 +376,21 @@ form.sign-up-form{
 
     .container.sign-up-mode .right-panel .image,
     .container.sign-up-mode .right-panel .content {
-      transform: translateY(0px);
+      transform: translateY(500%);
     }
 
     .signin-signup,
-    .custom-container.sign-up-mode .signin-signup{
+    .custom-container.sign-up-mode .sign-up-form{
         top: 5%;
-        transform: translate(-50%, 0);
+        transform: translate(25%, -50%);
+        left: 50%;
+
+    }
+
+    .signin-signup,
+    .custom-container.sign-up-mode .sign-in-form{
+        top: 5%;
+        transform: translate(-50%, 66%);
         left: 50%;
 
     }
@@ -398,6 +423,11 @@ form.sign-up-form{
         bottom:28%;
         left: 50%; 
      }
+
+     .right-panel .content, .right-panel{
+        /* transform: translateY(-270px); */
+        padding-top: 218px;
+    }
 }
 /* signup page begins */
 
@@ -420,3 +450,4 @@ form.sign-up-form{
 }
 
 /* signup page ends */
+
