@@ -30,23 +30,82 @@
     </script>
 </head>
 <body>
+    <!-- nav bar begins -->
     <nav>
         <div class="customcontainer">
-            <h2 class="log">OUT DATED</h2>
+            <img src="/images/Group 1.png" class="logoimage">
+            <!-- <h2 class="log">OUT DATED</h2> -->
             <div class="searchBar">
                 <ion-icon name="search-outline"></ion-icon>
                 <input type="search" placeholder="Find your friend">
             </div>
             <div class="create">
-                <label for="create-post">Create</label>
+                <label class="btn btn-primary"  for="create-post">Create</label>
                 <div class="profile-picture">
                     <img src="/images/profilepic1.jpg" alt="">
                 </div>
             </div>
         </div>
     </nav>
-         
-    <button onclick="logout()">Logout</button>
+    <!-- nav bar ends -->
+
+    <main>
+        <div class="customcontainer">
+            <!-- left side begins -->
+            <div class="left">
+                <a class="profile">
+                    <div class="profile-picture">
+                        <img src="/images/profilepic1.jpg" alt="">
+                    </div>
+                    <div class="handle">
+                        <h4>Jessica Day</h4>
+                        <p class="text-muted">
+                            @thejessicaday
+                        </p>
+                    </div>
+                </a>
+
+                <!-- sidebar begins  -->
+                 <div class="sidebar">
+                    <a href="" class="menu-items active">
+                        <span><ion-icon name="person-outline"></ion-icon></span> <h3>Profile</h3>
+                    </a>
+                    <a href="" class="menu-items">
+                        <span><ion-icon name="people-outline"></ion-icon></span> <h3>Friends</h3>                    
+                    </a>
+                    <a href="" class="menu-items">
+                        <span><ion-icon name="call-outline"></ion-icon></span> <h3>GMO Voice</h3>                   
+                    </a>
+                    <a href="" class="menu-items">
+                        <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span> <h3>GMO Text</h3>                  
+                    </a>
+                    <a href="" class="menu-items">
+                        <span><ion-icon name="alert-outline"></ion-icon></span> <h3>SOS</h3>            
+                    </a>
+                    <a href="" class="menu-items">
+                        <span><ion-icon name="heart-outline"></ion-icon></span> <h3>Safety Advice</h3>       
+                    </a>
+                    <a href="" class="menu-items">
+                        <span><ion-icon name="settings-outline"></ion-icon></span> <h3>Settings</h3>   
+                    </a>
+                </div>
+                <!-- end of sidebar begins -->
+                 <label for="log-out" class="btn btn-primary" onclick="logout()">Log Out</label>
+            </div>
+
+            <!-- middle begins -->
+            <div class="middle">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit maxime vel, libero fugiat neque soluta quasi quas ea asperiores, 
+                architecto assumenda consequuntur animi, commodi nesciunt odio ex alias inventore dolorum?
+            </div>
+
+            <!-- right begins -->
+            <div class="right">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit maxime vel, libero fugiat neque soluta quasi quas ea asperiores, 
+                architecto assumenda consequuntur animi, commodi nesciunt odio ex alias inventore dolorum?
+            </div>
+        </div>
+    </main>
     <!-- Page-specific code -->
      
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
