@@ -19,9 +19,9 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="/style/posts.css">
 
-    <title>/POSTS</title>
+    <title>outdated posts page</title>
 
-    <button onclick="logout()">Logout</button>
+    
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/script/auth.js"></script>
@@ -30,21 +30,27 @@
     </script>
 </head>
 <body>
-
-    <header>
-        <h1>POSTS PAGE</h1>
-    </header>
-
-    <main>
-        <div id="postsContainer" class="container mt-4">
-        <!-- Posts will be dynamically inserted here -->
+    <nav>
+        <div class="customcontainer">
+            <h2 class="log">OUT DATED</h2>
+            <div class="searchBar">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="search" placeholder="Find your friend">
+            </div>
+            <div class="create">
+                <label for="create-post">Create</label>
+                <div class="profile-picture">
+                    <img src="/images/profilepic1.jpg" alt="">
+                </div>
+            </div>
         </div>
-        </main>
+    </nav>
          
-    <footer></footer>
-         
-
+    <button onclick="logout()">Logout</button>
     <!-- Page-specific code -->
+     
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
     <script src="/script/posts.js"></script>
 </body>
 </html>
