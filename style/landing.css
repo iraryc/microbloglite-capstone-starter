@@ -26,7 +26,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-color: pink;
+    background-color: #203535;
     overflow: hidden;
 }
 
@@ -36,7 +36,7 @@
     width: 2000px;
     height: 2000px;
     border-radius: 50% ;
-    background: linear-gradient(-45deg, #4481eb, #04befe);
+    background: linear-gradient(-45deg, #7c4179, #FBE5E3);
     top:-10% ;
     right: 48%;
     transform: translateY(-50%);
@@ -87,7 +87,7 @@ form.sign-up-form{
 
 .title{
     font-size: 2.2rem;
-    color: blue;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -95,7 +95,7 @@ form.sign-up-form{
     max-width: 380px;
     width: 100%;
     height: 55px;
-    background-color:purple ;
+    background-color:white ;
     margin: 10px 0;
     border-radius: 45px;
     display: grid;
@@ -106,7 +106,7 @@ form.sign-up-form{
 .input-field ion-icon{
     text-align: center;
     line-height: 55px;
-    color: green;
+    color: #203535;
     font-size: 1.6rem;
     transform: translateX(18px) translateY(13px);
 }
@@ -118,12 +118,12 @@ form.sign-up-form{
     line-height: 1 ;
     font-weight: 600;
     font-size: 1.1rem;
-    color:white
+    color: #203535;
 
 }
 
 .input-field input::placeholder {
-    color: wheat;
+    color: gray;
     font-weight: 500;
 }
 
@@ -134,7 +134,7 @@ form.sign-up-form{
     outline: none;
     border-radius: 50px;
     cursor: pointer;
-    background-color: grey;
+    background-color: #FBE5E3;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
@@ -142,12 +142,13 @@ form.sign-up-form{
 }
 
 .loginbtn:hover{
-    background-color: darkgray;
+    background-color: #7c4179;
 }
 
 .social-text {
     padding: .7rem 0;
     font-size: 1rem;
+    color: white;
 }
 
 .social-media{
@@ -158,21 +159,21 @@ form.sign-up-form{
 .social-icon{
     height: 46px;
     width: 46px;
-    border: 1px solid #333;
+    border: 1px solid white;
     margin: 0 0.45rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 1.1rem;
     border-radius: 50px;
     transition: .3s;
 }
 
 .social-icon:hover {
-    color: lightcoral ;
-    border-color: lightcoral;
+    color: #FBE5E3 ;
+    border-color: #FBE5E3;
 }
 
 .image{
@@ -438,7 +439,7 @@ form.sign-up-form{
     outline: none;
     border-radius: 50px;
     cursor: pointer;
-    background-color: grey;
+    background-color: white;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
@@ -446,7 +447,7 @@ form.sign-up-form{
 }
 
 .signUpbtn:hover{
-    background-color: darkgray;
+    background-color: #FBE5E3;
 }
 
 /* signup page ends */
