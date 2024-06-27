@@ -26,8 +26,10 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-color: #203535;
+    background-color: #34505A;
     overflow: hidden;
+    font-family: "Fredoka", sans-serif;
+
 }
 
 .custom-container:before{
@@ -36,12 +38,31 @@
     width: 2000px;
     height: 2000px;
     border-radius: 50% ;
-    background: linear-gradient(-45deg, #7c4179, #FBE5E3);
+    background: linear-gradient(-90deg, #8583A2, #EBFDFD);
     top:-10% ;
     right: 48%;
     transform: translateY(-50%);
     z-index: 6;
     transition: 1.8s ease-in-out;
+}
+
+
+.navbar-brand-container {
+    display: flex;
+    align-items:center;
+    margin-left: auto;
+    
+}
+.navbar-brand-container img {
+    height: 80px; 
+    
+}
+.navbar-brand-container .titleOutDated {
+    font-family: "Dela Gothic One", sans-serif;
+    margin-left: 2px; /* Adjust the spacing as needed */
+    display: flex;
+    transform: translateY(10px);
+
 }
 
 .forms-container{
