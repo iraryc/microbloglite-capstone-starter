@@ -94,3 +94,33 @@ function logout () {
         });
 }
 
+
+// Function to handle user signup
+function signup(signupData) {
+    const options = {
+        method: "POST",
+        headers: {
+            "accept": "application/json",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username: signupData.username,
+            fullName: signupData.fullname,
+            password: signupData.password
+        }),
+    };
+
+    return fetch(apiBaseURL + "/api/users", options)
+        .then(response => response.json())
+        .then(signupData => {
+            if (signupData.message) {
+                console.error(signupData);
+                // Add error notification or visible indicator to the page
+                // to inform the user about the signup issue.
+                return null;
+            }
+
+            // Automatically log the user in after successful signup
+            return login({ username: signupData.username, password: signupData.password });
+        });
+}

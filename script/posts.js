@@ -2,8 +2,6 @@
 
 "use strict";
 
-"use strict";
- 
 // Function to create and append a post element to the container
 function displayPost(post) {
     const postElement = document.createElement('div');
@@ -58,7 +56,7 @@ function displayPost(post) {
 fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0', {
     headers: {
         'accept': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTQyNDY0NiwiZXhwIjoxNzE5NTExMDQ2fQ.C-4iB4gAWGzVfdU6hn55LdXNyQq9sF9DxunHePn5AzA'
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTUxMjY0OSwiZXhwIjoxNzE5NTk5MDQ5fQ.6kYFAjlphrTVZFIDhK6a7BZdOlgqVbySr1FSf_uavvE'
     }
 })
 .then(response => response.json())
@@ -101,3 +99,56 @@ const searchMessage = () => {
 };
 
 messageSearch.addEventListener('keyup', searchMessage);
+
+
+// Function to handle form submission and create a new post
+const createNewPost = (postText) => {
+    fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTUxMjY0OSwiZXhwIjoxNzE5NTk5MDQ5fQ.6kYFAjlphrTVZFIDhK6a7BZdOlgqVbySr1FSf_uavvE',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'text': postText 
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to create post');
+        }
+        return response.json();
+    })
+    .then(data => {
+        
+        const newPost = {
+            username: 'YourUsername', 
+            text: data.text, 
+            createdAt: new Date().toISOString() 
+        };
+
+        
+        displayPost(newPost);
+
+        
+        document.querySelector('#create-post').value = '';
+    })
+    .catch(error => {
+        console.error('Error creating post:', error);
+      
+    });
+};
+
+
+const createPostForm = document.querySelector('.create-post');
+
+createPostForm.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    
+    const postText = document.querySelector('#create-post').value;
+
+  
+    createNewPost(postText);
+});

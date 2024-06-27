@@ -34,3 +34,23 @@ sign_up_btn.addEventListener('click', () => {
 sign_in_btn.addEventListener('click', () => {
     container.classList.remove("sign-up-mode");
 });
+
+
+// New code for signup form submission handling
+const signupForm = document.querySelector("#signup");
+
+signupForm.onsubmit = function (event) {
+    event.preventDefault();
+
+    const signupData = {
+        username: signupForm.username.value,
+        fullname: signupForm.fullname.value,
+        password: signupForm.password.value,
+    };
+
+    signupForm.signUpButton.disabled = true;
+
+    signup(signupData).then(() => {
+        signupForm.signUpButton.disabled = false;
+    });
+};

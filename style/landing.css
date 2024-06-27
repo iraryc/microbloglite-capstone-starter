@@ -46,6 +46,30 @@
     transition: 1.8s ease-in-out;
 }
 
+/* welcome section begins */
+
+.welcome-section {
+    height: 100vh;
+    background-color: #34505A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: "Dela Gothic One", sans-serif;
+    
+}
+
+.welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.welcome-content p {
+    font-size: 1.5rem;
+}
+/* Welcome section ends */
+
 
 .navbar-brand-container {
     display: flex;
@@ -230,6 +254,7 @@ form.sign-up-form{
 .right-panel{
     pointer-events: none;
     padding: 3rem 12% 2rem 17%;
+   
 }
 
 .panel .content{
@@ -260,6 +285,7 @@ form.sign-up-form{
 
 .right-panel .content, .right-panel .image{
     transform: translateX(800px);
+    color: #203535;
 
 }
 /* login page ends */
