@@ -68,8 +68,36 @@ fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&o
 .catch(error => console.error('Error fetching posts:', error));
 
 
-// <div class="card-body">
-// <h5 class="card-title">${post.username}</h5>
-// <h6 class="card-subtitle mb-2 text-muted">${new Date(post.createdAt).toLocaleString()}</h6>
-// <p class="card-text">${post.text}</p>
-// </div>
+
+
+const menuItems = document.querySelectorAll('.menu-items');
+
+const changeActiveItem = () => {
+    menuItems.forEach(item => {
+        item.classList.remove('active');
+    })
+}
+menuItems.forEach(item => {
+    item.addEventListener('click', () =>{
+        changeActiveItem();
+        item.classList.add('active');
+    })
+})
+
+const messages = document.querySelector('.messages');
+const message = messages.querySelectorAll('.message');
+const messageSearch = document.querySelector('#message-search');
+
+const searchMessage = () => {
+    const val = messageSearch.value.toLowerCase();
+    message.forEach(user => {
+        let name = user.querySelector('h5').textContent.toLowerCase();
+        if(name.indexOf(val) != -1){
+            user.style.display = 'flex';
+        } else {
+            user.style.display = 'none';
+        }
+    });
+};
+
+messageSearch.addEventListener('keyup', searchMessage);

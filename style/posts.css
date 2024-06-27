@@ -13,7 +13,7 @@
 
 body{
     /* add font style here */
-    background: pink;
+    background: white;
     /* overflow: hidden; */
 }
 
@@ -49,8 +49,15 @@ img{
 }
 
 .btn-primary{
-    background: blue ;
+    background: #203535 ;
     color: azure;
+    border: none;
+}
+
+.btn-primary:hover{
+    background: #678F8E ;
+    color: azure;
+    border-color: none;
 }
 
 .text-bold{
@@ -58,13 +65,13 @@ img{
 }
 
 .text-muted{
-    color: grey;
+    color: rgb(94, 94, 94);
 }
 
 /* nav bar begins */
 nav{
     width: 100%;
-    background: purple;
+    background: #ededed;
     padding: .7rem 0;
     position: fixed;
     top: 0;
@@ -76,24 +83,26 @@ nav .customcontainer{
     align-items: center;
     justify-content: space-between;
 }
-
-nav .searchBar{
-    background: red;
+ 
+ .searchBar{
+    background: rgb(255, 255, 255);
     border-radius: 2rem;
     padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: center;
 }
 
-nav .searchBar input[type="search"]{
+ .searchBar input[type="search"]{
     background: transparent;
     width: 30vw;
     margin-left: 1rem;
     font-size: 0.9rem;
-    color:white ;
+    color:#203535 ;
 
 }
 
-nav .searchBar input[type="search"]::placeholder{
-    color: blue;
+ nav .searchBar input[type="search"]::placeholder{
+    color: rgb(94, 94, 94);
 }
 
 nav .create {
@@ -137,19 +146,20 @@ main .customcontainer .left{
 
 main .customcontainer .left .profile{
     padding: 1rem ;
-    background: blue;
+    background: #203535 ;;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     column-gap: 1rem;
     width: 100%;
+    color: white;
 }
 
 /* sidebar begins */
 
 .left .sidebar{
     margin-top: 1rem;
-    background: purple;
+    background: #203535 ;
     border-radius: 1rem ;
 }
 
@@ -160,10 +170,12 @@ main .customcontainer .left .profile{
     cursor: pointer;
     translate: all 300ms ease;
     position: relative;
+    color: white;
 }
 
 .left .sidebar .menu-items:hover{
-    background: lightblue;
+    background: #9CBFBF ;
+    
 }
 
 .left .sidebar i{
@@ -180,13 +192,15 @@ main .customcontainer .left .profile{
 }
 
 .left .sidebar .active{
-    background: pink
+    background: white ;
 }
+
 
 .left .sidebar .active i, 
 .left .sidebar .active h3{
-    color: yellow;
+    color: #203535;
 }
+
 
 .left .sidebar .active::before{
     content: "";
@@ -194,13 +208,15 @@ main .customcontainer .left .profile{
     width: 1.5rem;
     height: 100%;
     position: absolute;
-    background: blue;
+    background: #9CBFBF;;
 }
 
 .left .sidebar .menu-items:first-child.active{
     border-top-left-radius: 1rem;
     overflow: hidden;
+   
 }
+
 
 .left .sidebar .menu-items:last-child.active{
     border-bottom-left-radius: 1rem;
@@ -236,7 +252,7 @@ main .customcontainer .left .profile{
     color: white;
     font-size: 0.75rem;
     width: 100%;
-    background: rebeccapurple;
+    background: white;
     position: relative;
     overflow: hidden;
 }
@@ -283,7 +299,7 @@ background: url(/images/couple1.jpg) no-repeat center center/cover;
     width: 2rem;
     height: 2rem;
     align-self: start;
-    border: 3px solid blue ;
+    border: 2px solid white;
 }
 
 /* post begins */
@@ -296,24 +312,26 @@ background: url(/images/couple1.jpg) no-repeat center center/cover;
     background: white;
     padding: 0.4rem 1rem;
     border-radius: 2rem;
+    border: 2px solid #203535;
 }
 
 .middle .create-post input[type='text']{
     justify-self: start;
     width: 100%;
     padding-left: 1rem;
-    color: red;
+    color: #203535;
     margin-right: 1rem;
 }
 
 /* feed */
 .middle .feeds .feed{
-    background: rgb(194, 194, 236);
+    background: rgb(241, 241, 241);
     border-radius: 2rem;
     padding: 1rem;
     margin: 1rem 0;
     font-size: .85rem;
     line-height: 1.5;
+    color: #203535;
 
 }
 
@@ -364,3 +382,148 @@ background: url(/images/couple1.jpg) no-repeat center center/cover;
 }
 
 /* end of feed */
+
+/* right side begins */
+
+main .customcontainer .right{
+    height: max-content;
+    position: sticky;
+    top: -18rem;
+    bottom: 0;
+    color: white;
+}
+
+.right .messages{
+    background: #203535;
+    border-radius:1rem ;
+    padding: 1rem;
+}
+
+.right .messages .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.right .messages i{
+    font-size: 1.4rem;    
+    
+}
+
+.right .messages .searchBar{
+    display: flex;
+    margin-bottom: 1rem;
+    background-color: white;
+    color: #203535;
+
+}
+
+.right .messages .searchBar .searchicon{
+    color: #203535;
+
+}
+
+.right .messages .category{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.right .messages .category h6{
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid #678F8E;
+    padding-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: white;
+}
+
+.right .messages .category .active{
+    border-color: #D9EFFD;
+}
+
+.right .messages .message{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+    color: white;
+}
+
+.right .messages .message:last-child{
+    margin: 0;
+}
+
+.right .messages .message p{
+    font-size: 0.8rem;
+}
+
+.right .messages .message .profile-picture .active{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid #203535;
+    background: green;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.right .message .profile-picture{
+    position: relative;
+    overflow: visible;
+}
+
+.right .profile-picture img{
+    border-radius: 50%;
+}
+
+
+/* GMO alerts */
+
+.right .friend-request{
+    margin-top: 1rem;
+
+}
+
+.right .friend-request h4{
+    color: #203535;
+    margin: 1rem 0;
+}
+
+/* .right .friend-request p{
+    display: flex;
+    
+} */
+.right .request{
+    background: rgb(237, 237, 237) ;
+    padding: 1rem ;
+    border-radius:1rem ;
+    margin-bottom: 0.7rem;
+    color: #203535;
+}
+
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.right .request .action{
+    display: flex;
+    gap: 1rem;
+}
+
+.right .request .profile-details {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 1rem;
+    margin-bottom: 0.5rem; /* Adjust the space between profile and status */
+}
+
+.right .searchBar ion-icon {
+    font-size: 2.0rem; /* Adjust the size as needed */
+    color: white; /* Optional: Adjust the color if needed */
+}
