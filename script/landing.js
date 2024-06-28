@@ -54,3 +54,8 @@ signupForm.onsubmit = function (event) {
         signupForm.signUpButton.disabled = false;
     });
 };
+
+function scrollToSignup() {
+    const signupSection = document.getElementById('signup-section');
+    signupSection.scrollIntoView({ behavior: 'smooth' });
+}

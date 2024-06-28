@@ -5,58 +5,69 @@
 // Function to create and append a post element to the container
 function displayPost(post) {
     const postElement = document.createElement('div');
-    postElement.className = 'feeds mt-4';
+    postElement.className = 'feeds';
     postElement.innerHTML = `
-     <div class="feed">
+        <div class="feed">
                         <div class="head">
                             <div class="user">
                                 <div class="profile-picture">
-                                    <img src="/images/profilepic1.jpg">
+                                    <img src="/images/girl6.jpg">
                                 </div>
-                                <div class="ingo">
-                                    <h3 class="card-title">${post.username}</h3>
+                                <div class="info">
+                                     <h3 class="card-title">${post.username}</h3>
                                     <small class="card-subtitle mb-2 text-muted">${new Date(post.createdAt).toLocaleString()}</small>
                                 </div>
-                             
+                                
+                                   
+            
                             </div>
-                               <span class="edit">
-                                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                                </span>
+                             <span class="edit">
+                                        <ion-icon  name="ellipsis-horizontal-outline"></ion-icon>
+                                    </span>
                         </div>
                         <div class="photo">
                             <img src="/images/couple3.jpg">
                         </div>
+                        
                         <div class="action-button">
-                            <div class="interaction-button">
-                                <span><ion-icon name="heart-outline"></ion-icon></span>
-                                <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                                <span><ion-icon name="share-social-outline"></ion-icon></span>
+                             <div class="interaction-button">
+                                    <span><ion-icon class="posticon" name="heart-outline"></ion-icon></span>
+                                    <span><ion-icon class="posticon" name="chatbubble-ellipses-outline"></ion-icon></span>
+                                    <span><ion-icon class="posticon" name="share-social-outline"></ion-icon></span>
                             </div>
                             <div class="bookmark">
-                                <span><ion-icon name="bookmark-outline"></ion-icon></span>
+                                    <span><ion-icon class="posticon" name="bookmark-outline"></ion-icon></span>
                             </div>
                         </div>
+                        
                         <div class="liked-by">
                             <span><img src="/images/profilepic1.jpg"></span>
                             <span><img src="/images/profilepic1.jpg"></span>
                             <span><img src="/images/profilepic1.jpg"></span>
                             <p>Liked by <b>Monce Lua</b> and <b>400 others</b></p>
                         </div>
+                                
                         <div class="caption">
-                        <p><b>${post.username} </b> ${post.text} </p>
-                    </div>
-                    <div class="comments text-muted">View all 145 comments</div>
-                 </div>
+                            <p><b>${post.username} </b> ${post.text} </p>
+                        </div>
+                                    
+                        <div class="comments text-muted">View all 145 comments</div>
+        </div>
 
     `;
     document.getElementById('postsContainer').appendChild(postElement);
 }
  
+
+function displayPosts() {
+    
+const mylogin = getLoginData();
+console.log(mylogin);
 // Fetch posts from the API and display them
 fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0', {
     headers: {
         'accept': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTUxMjY0OSwiZXhwIjoxNzE5NTk5MDQ5fQ.6kYFAjlphrTVZFIDhK6a7BZdOlgqVbySr1FSf_uavvE'
+        'Authorization': `Bearer ${mylogin.token}` //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTUxMjY0OSwiZXhwIjoxNzE5NTk5MDQ5fQ.6kYFAjlphrTVZFIDhK6a7BZdOlgqVbySr1FSf_uavvE'
     }
 })
 .then(response => response.json())
@@ -65,6 +76,8 @@ fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&o
 })
 .catch(error => console.error('Error fetching posts:', error));
 
+}
+displayPosts();
 
 
 
@@ -103,12 +116,16 @@ messageSearch.addEventListener('keyup', searchMessage);
 
 // Function to handle form submission and create a new post
 const createNewPost = (postText) => {
+    const mylogin = getLoginData();
+    console.log(mylogin);
+    // Fetch posts fr
+
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
         method: 'POST',
         headers: {
             'accept': 'application/json',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTUxMjY0OSwiZXhwIjoxNzE5NTk5MDQ5fQ.6kYFAjlphrTVZFIDhK6a7BZdOlgqVbySr1FSf_uavvE',
-            'Content-Type': 'application/json'
+      'Authorization': `Bearer ${mylogin.token}`, //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpvZXk3NCIsImlhdCI6MTcxOTUxMjY0OSwiZXhwIjoxNzE5NTk5MDQ5fQ.6kYFAjlphrTVZFIDhK6a7BZdOlgqVbySr1FSf_uavvE'
+  'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             'text': postText 
@@ -130,7 +147,7 @@ const createNewPost = (postText) => {
 
         
         displayPost(newPost);
-
+        location.reload();
         
         document.querySelector('#create-post').value = '';
     })
@@ -138,6 +155,7 @@ const createNewPost = (postText) => {
         console.error('Error creating post:', error);
       
     });
+    
 };
 
 
@@ -151,4 +169,5 @@ createPostForm.addEventListener('submit', function(event) {
 
   
     createNewPost(postText);
+    
 });
