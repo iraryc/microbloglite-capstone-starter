@@ -237,11 +237,16 @@ main .customcontainer .left .profile{
 
 /* middle begins */
 
+.middle {
+    width: 900px;
+}
+
 .middle .stories{
     display: flex;
     justify-content: space-between;
     height: 12rem;
     gap: 0.5rem;
+   
 }
 
 .middle .stories .story{
