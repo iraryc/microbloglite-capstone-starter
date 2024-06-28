@@ -283,7 +283,7 @@ form.sign-up-form{
 
 
 .right-panel .content, .right-panel .image{
-    transform: translateX(1000px);
+    transform: translateX(800px);
     color: #203535;
 
 }
@@ -309,7 +309,7 @@ form.sign-up-form{
 
 .custom-container.sign-up-mode .left-panel .image,
 .custom-container.sign-up-mode .left-panel .content{
-    transform: translateX(-1000px);
+    transform: translateX(-800px);
 }
 
 .custom-container.sign-up-mode .right-panel .content, 
