@@ -55,13 +55,13 @@ img{
 .btn-primary{
     background: #203535 ;
     color: azure;
-    border: none;
+    border: 2px solid;
 }
 
 .btn-primary:hover{
     background: #678F8E ;
     color: azure;
-    border-color: none;
+    border-color: 2px solid;
 }
 
 .text-bold{
@@ -468,14 +468,26 @@ main .customcontainer .right{
     border-color: #D9EFFD;
 }
 
-.right .messages .message{
+.right .messages .message {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
     align-items: start;
     color: white;
+    transition: background-color 0.3s ease; 
+    border-radius: 8px; 
+    padding: 10px; 
 }
 
+.right .messages .message:hover {
+    background-color: #678F8E; 
+    cursor: pointer; 
+}
+
+.right .messages .message:hover h5,
+.right .messages .message:hover p {
+    color: white; 
+}
 .right .messages .message:last-child{
     margin: 0;
 }
